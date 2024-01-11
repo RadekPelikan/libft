@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 17:15:11 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/11 18:50:27 by rpelikan         ###   ########.fr       */
+/*   Created: 2024/01/11 20:47:38 by rpelikan          #+#    #+#             */
+/*   Updated: 2024/01/11 20:55:02 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned char	*ptr;
-	size_t			i;
+	unsigned int i;
+	unsigned int j;
+	unsigned int len;
 
-	ptr = s;
 	i = 0;
-	while (i < n)
+	while (dst[i])
+		i++;
+	len = 0;
+	while (src[len])
+		len++;
+	if (size <= i)
+		len += size;
+	else
+		len += i;
+	j = 0;
+	while (src[j] && i + 1 < size)
 	{
-		*ptr = (unsigned char)c;
-		++ptr;
-		++i;
+		dst[i] = src[j];
+		i++;
+		j++;
 	}
-	return (s);
+	dst[i] = '\0';
+	return (len);
 }
-
-//int	main(void)
-//{
-//	char	str[50] = "Hddfgdfgdgfdgdfgdgdfgdfgsdhgd ";
-//
-//	//	strcpy(str, "This is string.h library function");
-//	puts(str);
-//	ft_memset(str, '$', 7);
-//	puts(str);
-//}

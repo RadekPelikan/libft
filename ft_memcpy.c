@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 17:15:11 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/11 18:50:27 by rpelikan         ###   ########.fr       */
+/*   Created: 2024/01/11 18:15:18 by rpelikan          #+#    #+#             */
+/*   Updated: 2024/01/11 20:37:35 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*ptr;
+	unsigned char	*to;
+	unsigned char	*from;
 	size_t			i;
 
-	ptr = s;
 	i = 0;
+	to = dest;
+	from = (unsigned char *)src;
 	while (i < n)
 	{
-		*ptr = (unsigned char)c;
-		++ptr;
+		*to = *from;
+		++to;
+		++from;
 		++i;
 	}
-	return (s);
+	return (dest);
 }
 
-//int	main(void)
-//{
-//	char	str[50] = "Hddfgdfgdgfdgdfgdgdfgdfgsdhgd ";
+// int main(void){
+//	char str[40] = "Hello world, how are you?";
+//	char dest[40];
 //
-//	//	strcpy(str, "This is string.h library function");
 //	puts(str);
-//	ft_memset(str, '$', 7);
-//	puts(str);
+//	ft_memcpy(dest, str, 10);
+//	puts(dest);
 //}

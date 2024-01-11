@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 17:15:11 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/11 18:50:27 by rpelikan         ###   ########.fr       */
+/*   Created: 2024/01/11 17:03:16 by rpelikan          #+#    #+#             */
+/*   Updated: 2024/01/11 18:14:54 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*ptr;
 	size_t			i;
 
-	ptr = s;
 	i = 0;
+	ptr = s;
 	while (i < n)
 	{
-		*ptr = (unsigned char)c;
+		*ptr = '\0';
 		++ptr;
 		++i;
 	}
-	return (s);
 }
 
 //int	main(void)
 //{
-//	char	str[50] = "Hddfgdfgdgfdgdfgdgdfgdfgsdhgd ";
+//	char	str[50] = "Hello World!";
 //
-//	//	strcpy(str, "This is string.h library function");
 //	puts(str);
-//	ft_memset(str, '$', 7);
+//	ft_bzero(str, 4);
 //	puts(str);
 //}
