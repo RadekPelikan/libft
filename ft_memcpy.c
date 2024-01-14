@@ -6,13 +6,11 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 18:15:18 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/11 20:37:35 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/14 15:51:12 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

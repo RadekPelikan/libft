@@ -6,12 +6,11 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:03:16 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/11 18:14:54 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/14 15:50:46 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

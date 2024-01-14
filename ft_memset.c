@@ -6,12 +6,11 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 17:15:11 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/11 18:50:27 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/14 15:51:17 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

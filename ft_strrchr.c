@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 20:47:38 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/14 15:51:22 by rpelikan         ###   ########.fr       */
+/*   Created: 2024/01/14 13:55:26 by rpelikan          #+#    #+#             */
+/*   Updated: 2024/01/14 15:51:37 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	len;
+	char	*ptr;
+	char	*latest;
 
-	i = 0;
-	while (dst[i])
-		i++;
-	len = 0;
-	while (src[len])
-		len++;
-	if (size <= i)
-		len += size;
-	else
-		len += i;
-	j = 0;
-	while (src[j] && i + 1 < size)
+	ptr = (char *)s;
+	while (*ptr != '\0')
 	{
-		dst[i] = src[j];
-		i++;
-		j++;
+		if (*ptr == c)
+			latest = ptr;
+		++ptr;
 	}
-	dst[i] = '\0';
-	return (len);
+	return (latest);
 }
+
+// int	main(void)
+// {
+// 	char c = 'a';
+// 	char str[40] = "a Hello a world!";
+
+// 	printf("%lu\n", (unsigned long) &c);
+// 	char *ptr = ft_strrchr(str, c);
+// 	puts(ptr);
+// }

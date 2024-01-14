@@ -6,12 +6,11 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 16:17:03 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/08 16:26:39 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/14 15:50:56 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {

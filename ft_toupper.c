@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 20:47:38 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/14 15:51:22 by rpelikan         ###   ########.fr       */
+/*   Created: 2024/01/14 13:26:29 by rpelikan          #+#    #+#             */
+/*   Updated: 2024/01/14 15:51:41 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_toupper(int c)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	len;
-
-	i = 0;
-	while (dst[i])
-		i++;
-	len = 0;
-	while (src[len])
-		len++;
-	if (size <= i)
-		len += size;
-	else
-		len += i;
-	j = 0;
-	while (src[j] && i + 1 < size)
-	{
-		dst[i] = src[j];
-		i++;
-		j++;
-	}
-	dst[i] = '\0';
-	return (len);
+	if (c >= 'a' && c <= 'z')
+		return (c + ('A' - 'a'));
+	return (c);
 }
+
+// int	main(void)
+// {
+// 	char	c;
+
+// 	c = 'a';
+// 	puts(&c);
+// 	c = ft_toupper(c);
+// 	puts(&c);
+// 	c = 'z';
+// 	puts(&c);
+// 	c = ft_toupper(c);
+// 	puts(&c);
+// }

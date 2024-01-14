@@ -6,11 +6,11 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 16:53:36 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/08 16:58:06 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/14 15:51:31 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

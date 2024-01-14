@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 20:47:38 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/14 15:51:22 by rpelikan         ###   ########.fr       */
+/*   Created: 2024/01/14 16:58:37 by rpelikan          #+#    #+#             */
+/*   Updated: 2024/01/14 17:47:23 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	len;
+	size_t	i;
+	char	*sub_str;
 
+	sub_str = ft_calloc(len + 1, sizeof(char));
+	if (sub_str == NULL)
+		return (NULL);
 	i = 0;
-	while (dst[i])
-		i++;
-	len = 0;
-	while (src[len])
-		len++;
-	if (size <= i)
-		len += size;
-	else
-		len += i;
-	j = 0;
-	while (src[j] && i + 1 < size)
+	while (s[start + i] && i < len)
 	{
-		dst[i] = src[j];
-		i++;
-		j++;
+		sub_str[i] = s[start + i];
+		++i;
 	}
-	dst[i] = '\0';
-	return (len);
+	sub_str[i] = '\0';
+	return (sub_str);
 }
+
+// int main(void) {
+// 	char str1[40] = "Hello world!";
+// 	size_t start = 6;
+
+// 	puts(str1);
+// 	char *str2 = ft_substr(str1, start, 2);
+// 	puts(str2);
+// }

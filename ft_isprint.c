@@ -6,9 +6,11 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 16:51:48 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/08 16:53:18 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/14 15:51:04 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	is_print(int c)
 {

@@ -6,9 +6,11 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 16:27:55 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/08 16:46:02 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/14 15:51:01 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 20:47:38 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/14 15:51:22 by rpelikan         ###   ########.fr       */
+/*   Created: 2024/01/14 16:45:06 by rpelikan          #+#    #+#             */
+/*   Updated: 2024/01/14 17:47:48 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strdup(const char *s)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	len;
+	int		len;
+	char	*dup_str;
 
-	i = 0;
-	while (dst[i])
-		i++;
-	len = 0;
-	while (src[len])
-		len++;
-	if (size <= i)
-		len += size;
-	else
-		len += i;
-	j = 0;
-	while (src[j] && i + 1 < size)
+	len = ft_strlen(s);
+	dup_str = ft_calloc(len + 1, sizeof(char));
+	while (len--)
 	{
-		dst[i] = src[j];
-		i++;
-		j++;
+		dup_str[len] = s[len];
 	}
-	dst[i] = '\0';
-	return (len);
+	return (dup_str);
 }
+
+// int main(void) {
+// 	char str1[40] = "Hello world!";
+
+// 	puts(str1);
+// 	char *str2 = ft_strdup(str1);
+// 	puts(str2);
+// }
