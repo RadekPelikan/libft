@@ -6,7 +6,7 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 17:18:36 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/15 20:36:23 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/15 20:52:01 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,3 +69,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed_str = ft_substr(s1, start, end - start);
 	return (trimmed_str);
 }
+
+// int main(void) {
+// 	char str[40] = "  . ..--..//Hello World! ..\t   -..";
+// 	char set[40] = " .-/\t";
+
+// 	puts(str);
+// 	char *str2 = ft_strtrim(str, set);
+// 	puts(str2);
+// }
