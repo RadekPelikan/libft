@@ -32,5 +32,8 @@ fclean:	clean
 re:
 	fclean all
 
+name:
+	$(info   $(NAME))
+
 .PHONY:
 	all clean fclean re

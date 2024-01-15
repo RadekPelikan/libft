@@ -6,45 +6,66 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 17:18:36 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/15 18:19:46 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/15 20:36:23 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+int	ft_find_start(char const *s1, char const *set)
 {
-	char *trimmed_str;
-	char *set_ptr;
-	int i;
-	int start;
-	int end;
+	char	*set_ptr;
+	int		i;
 
-	start = -1;
-	end = -1;
 	set_ptr = (char *)set;
 	i = 0;
-	while (s1[i] && end == -1)
+	while (s1[i])
 	{
 		while (*set_ptr)
 		{
-			if (s1[i] == *set_ptr && start == -1)
-				break ;
-			if (s1[i] != *set_ptr && !*(set_ptr + 1) && start != -1)
+			if (s1[i] == *set_ptr)
 				break ;
 			++set_ptr;
 		}
-		if (*set_ptr == '\0' && start == -1)
-			start = i;
-		if (*set_ptr != '\0' && start != -1)
-			end = i + 2;
+		if (*set_ptr == '\0')
+			return (i);
 		set_ptr = (char *)set;
 		++i;
 	}
-	printf("%d | %d\n", start, end);
-	trimmed_str = ft_calloc(end - start + 1, sizeof(char));
-	trimmed_str[end - start] = '\0';
-	while (s1[start] && start++ != end)
-		trimmed_str[end - start] = s1[start - 1];
+	return (i);
+}
+
+int	ft_find_end(char const *s1, char const *set)
+{
+	char	*set_ptr;
+	int		i;
+
+	set_ptr = (char *)set;
+	i = ft_strlen(s1) - 1;
+	while (s1[i])
+	{
+		while (*set_ptr)
+		{
+			if (s1[i] == *set_ptr)
+				break ;
+			++set_ptr;
+		}
+		if (*set_ptr == '\0')
+			return (i);
+		set_ptr = (char *)set;
+		--i;
+	}
+	return (i);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*trimmed_str;
+	int		start;
+	int		end;
+
+	start = ft_find_start(s1, set);
+	end = ft_find_end(s1, set);
+	trimmed_str = ft_substr(s1, start, end - start);
 	return (trimmed_str);
 }
