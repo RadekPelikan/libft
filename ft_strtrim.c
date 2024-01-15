@@ -6,7 +6,7 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 17:18:36 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/14 18:12:50 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:19:46 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 		set_ptr = (char *)set;
 		++i;
 	}
+	printf("%d | %d\n", start, end);
 	trimmed_str = ft_calloc(end - start + 1, sizeof(char));
-	trimmed_str[end - start] = '\0';	
-	while(s1[start] && start++ != end)
+	trimmed_str[end - start] = '\0';
+	while (s1[start] && start++ != end)
 		trimmed_str[end - start] = s1[start - 1];
 	return (trimmed_str);
 }
