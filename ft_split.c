@@ -6,7 +6,7 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:45:58 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/28 12:29:30 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/28 12:30:12 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_wordcount(const char *s, char c)
 			++i;
 		if (s[i] != c)
 			++count;
-		while(s[i] != '\0' && s[i] != c)
+		while (s[i] != '\0' && s[i] != c)
 			++i;
 	}
 	return (count);
@@ -60,7 +60,7 @@ char	**ft_split(char const *s, char c)
 	result = ft_calloc(ft_wordcount(s, c) + 1, sizeof(char **));
 	end_ptr = (char *)s;
 	while (s[end_ptr - s] && (end_ptr - s) < len)
-	{	
+	{
 		start_ptr = ft_find_word_start(s + (end_ptr - s), c);
 		end_ptr = ft_strchr(start_ptr, c);
 		if (start_ptr == NULL && end_ptr == NULL)
