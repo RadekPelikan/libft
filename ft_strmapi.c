@@ -6,7 +6,7 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 13:32:03 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/28 13:53:01 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/28 14:02:58 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *result;
-	int i;
+	char	*result;
+	int		i;
 
 	if (s == NULL || f == NULL)
 		return (NULL);
