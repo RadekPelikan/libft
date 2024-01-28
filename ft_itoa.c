@@ -6,7 +6,7 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 12:32:17 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/28 13:31:39 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/28 13:41:26 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ char	*ft_itoa(int n)
 	ft_addnum(result + digit_count + 1 * is_cegative - 1, tmp);
 	if (is_cegative == 1)
 		result[0] = '-';
-	return (NULL);
+	result[digit_count + 1 * is_cegative] = '\0';
+	return (result);
 }
