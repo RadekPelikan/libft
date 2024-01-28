@@ -6,12 +6,13 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 14:02:00 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/28 14:02:12 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/28 14:10:46 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd){
-
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 15:44:51 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/28 14:02:18 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/28 14:10:02 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <ctype.h>
+# include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
