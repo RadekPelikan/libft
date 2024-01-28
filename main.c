@@ -1,9 +1,19 @@
 #include "libft.h"
 
+char ft_wrap(unsigned int num, char c ) {
+	(void) num;
+	if (ft_isalpha(c))
+		return 'a';
+	else if (ft_isdigit(c))
+		return 'd';
+	return c;
+}
+
+
 int	main(void)
 {
-	int num = -42;
+	char str[40] = "AHoj 42 jak se mas?";
 
-	char *num_str = ft_itoa(num);
-	puts(num_str);
+	char *result = ft_strmapi(str, ft_wrap);
+	puts(result);
 }
