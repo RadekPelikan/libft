@@ -6,7 +6,7 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:45:58 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/28 12:28:36 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/28 12:29:30 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ int	ft_wordcount(const char *s, char c)
 	return (count);
 }
 
-// char	*ft_substr(char const *s, unsigned int start, size_t len)
-
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
@@ -59,7 +57,6 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	len = ft_strlen(s);
-	printf("WORDS: %d\n", ft_wordcount(s, c) + 1);
 	result = ft_calloc(ft_wordcount(s, c) + 1, sizeof(char **));
 	end_ptr = (char *)s;
 	while (s[end_ptr - s] && (end_ptr - s) < len)
@@ -70,14 +67,10 @@ char	**ft_split(char const *s, char c)
 			break ;
 		if (end_ptr == 0)
 			end_ptr = (char *)s + len;
-		printf("%d: START:\t%s\n",i, start_ptr);
-		printf("%d: LEN:  \t%ld\n", i, end_ptr - start_ptr);
 		result[i] = ft_substr(start_ptr, 0, end_ptr - start_ptr);
-		printf("%d: RESULT:\t'%s'\n\n", i, result[i]);
 		++i;
 	}
 	result[i] = ft_calloc(1, sizeof(char));
 	result[i][0] = '\0';
-	printf("RESULT %d: '%s'\n", i, result[i]);
 	return (result);
 }
