@@ -1,7 +1,7 @@
 #include "libft.h"
 
 int main(void) {
-	char str[40] = "a Helllo how are you? a";
+	char str[40] = "a b c d    e f gggggggg";
 	char c = ' ';
 
 	puts(str);
