@@ -6,7 +6,7 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 13:32:03 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/28 13:47:41 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/28 13:52:40 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		result[i] = f(i, s[i]);
 		++i;
 	}
+	resutl[i] = '\0';
 	return (result);
 }
