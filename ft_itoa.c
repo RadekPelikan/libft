@@ -6,7 +6,7 @@
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 12:32:17 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/28 13:41:26 by rpelikan         ###   ########.fr       */
+/*   Updated: 2024/01/31 20:19:48 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*ft_addnum(char *ptr, int n)
 		return (ptr);
 	*ptr = (n % 10) + '0';
 	ft_addnum(ptr - 1, n / 10);
-	printf("S: %c | %d\n", *ptr, n % 10);
 	return (ptr);
 }
 

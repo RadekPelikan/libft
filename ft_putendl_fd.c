@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpelikan <rpelikan@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/28 14:15:08 by rpelikan          #+#    #+#             */
-/*   Updated: 2024/01/31 20:02:38 by rpelikan         ###   ########.fr       */
+/*   Created: 2024/01/31 20:03:02 by rpelikan          #+#    #+#             */
+/*   Updated: 2024/01/31 20:11:07 by rpelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }
