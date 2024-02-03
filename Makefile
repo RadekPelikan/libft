@@ -4,36 +4,28 @@ RM		:=	rm -f
 
 NAME	:=	libft.a
 
-SRCDIR = .
-OBJDIR  :=  build
-SOURCES	:= 	$(shell find $(SRCDIR) -name "*.c")
-OBJECTS :=  $(addprefix $(OBJDIR)/, $(notdir $(SOURCES:.c=.o)))
+SRCS	:= 	$(shell find $(SRCDIR) -name "*.c")
+OBJS	:=	$(SRCS:.c=.o)
 
-all : $(NAME)
+all:		$(NAME)
 
-$(NAME) : $(OBJECTS)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJECTS)
-	chmod +x $(NAME)
+$(NAME):	$(OBJS)
+			ar -rcs $(NAME) $(OBJS)
 
-$(OBJDIR)/%.o : $(SRCDIR)/%.c
-	@mkdir -p $(OBJDIR)
-	$(CC) $(FLAGS) -c -o $@ $<
+	
+.c.o:
+			$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
 
 so:
-	$(CC) -nostartfiles -fPIC $(FLAGS) $(SOURCES)
-	gcc -nostartfiles -shared -o libft.so $(OBJECTS)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
-	$(RM) -r $(OBJDIR)
+			$(RM) $(OBJS)
 
-fclean:	clean
-	$(RM) $(NAME)
+fclean: 	clean
+			$(RM) $(NAME)
 
-re:
-	fclean all
+re:			fclean all
 
-name:
-	$(info   $(NAME))
-
-.PHONY:
-	all clean fclean re
+.PHONY: 	all clean fclean re 
